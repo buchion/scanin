@@ -1,0 +1,8 @@
+<div [@moveInRight]>
+    <span *ngIf='error'>{{ error }}</span><br />
+    <br><button id="fb" (click)='loginFacebook()' mat-raised-button >Login with Facebook</button><br />
+    <br><button id="google" (click)='loginGoogle()' mat-raised-button >Login With Google</button><br />
+    <br><button id="email" mat-raised-button (click)='showform()' >Login with Email</button><br />
+</div>
+
+<app-email *ngIf='show'></app-email>

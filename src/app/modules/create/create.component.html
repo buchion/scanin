@@ -1,0 +1,72 @@
+<div class='flex-container'>
+  <div class='formcontainer'>
+    <div class='titlecard'>
+      <mat-card-header>
+        <!-- <div mat-card-avatar class='header-image'></div> -->
+        <mat-card-title>Create an Event</mat-card-title>
+        <mat-card-subtitle>Complete your Profile</mat-card-subtitle>
+      </mat-card-header>
+    </div>
+
+    <mat-card class='example-card'>
+
+
+      <mat-card-content>
+
+        <form class='form'>
+
+          <table class='full-width' cellspacing='0'>
+            <tr>
+              <td>
+                <mat-form-field class='full-width'>
+                  <input matInput placeholder='Event Name'>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class='full-width'>
+                  <input matInput placeholder='Organizer'>
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
+
+          <p>
+            <mat-form-field class='full-width'>
+              <textarea matInput placeholder="Address"></textarea>
+            </mat-form-field>
+            <mat-form-field class='full-width'>
+              <textarea matInput placeholder='Telephone'></textarea>
+            </mat-form-field>
+          </p>
+
+          <table class='full-width' cellspacing='0'>
+            <tr>
+              <td>
+                <mat-form-field class='full-width'>
+                  <input matInput placeholder='City'>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class='full-width'>
+                  <input matInput placeholder='State'>
+                </mat-form-field>
+              </td>
+              <td>
+            </tr>
+          </table>
+        </form>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button (click)='createEvent()' mat-raised-button>CREATE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+
+
+  <div class='svgbg'>
+    <img src='../../../assets/images/undraw_events_2p66.svg'>
+  </div>
+
+</div>

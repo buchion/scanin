@@ -1,0 +1,58 @@
+// Button Colors
+$google: #fff;
+$facebook: #3B5998;
+
+$asset: (
+    'fb': '../../../assets/images/facebook.svg',
+    'email': '../../../assets/images/email.svg',
+    'google': '../../../assets/images/google.svg'
+    );
+
+
+// Sign Up Button Logo and Size Control
+$btnsize : 29px;
+$logoleft: 20px;
+$logotop: 2px;
+
+#email {
+    background: #ECECEC url(map-get($asset, email)) no-repeat 25px;
+    background-size: $btnsize;
+}
+
+#fb {
+    background: $facebook url(map-get($asset, fb)) no-repeat $logoleft $logotop !important;
+    background-size: $btnsize !important;
+    color: #fff;
+}
+
+#google {
+    background: #fff url(map-get($asset, google)) no-repeat $logoleft $logotop !important;
+    background-size: $btnsize !important;
+}
+
+button {
+    width: 100%;
+}
+
+
+@media (max-width: 600px) {
+    #page {
+        padding: 1em;
+    }
+    #toolbar {
+        width: 80%;
+        margin-left: -50%;
+    }
+    #fb {
+        background: $facebook (map-get($asset, fb)) no-repeat $logoleft $logotop;
+        background-size: $btnsize;
+    }
+    #google {
+        background: $google url(map-get($asset, google)) no-repeat $logoleft $logotop;
+        background-size: $btnsize;
+    }
+    #email {
+        background: #ECECEC url(map-get($asset, email)) no-repeat $logoleft $logotop;
+        background-size: $btnsize;
+    }
+}
