@@ -1,0 +1,16 @@
+
+<div class='form-container'>
+    <h3>Login with Email</h3>
+    
+    <span class='error' *ngIf='error' [@fallIn]>{{error}}</span>
+  
+    <form #formData='ngForm' (ngSubmit)='onSubmit(formData)'>
+      <mat-form-field class='example-full-width'>
+        <input matInput type='email' placeholder='Email Address' (ngModel)='email' name='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+      </mat-form-field>
+      <mat-form-field class='example-full-width'>
+        <input matInput type='password' placeholder='Password' (ngModel)='password' name='password' pattern='^.{7,25}$' required>
+      </mat-form-field>
+        <button mat-raised-button type='submit' [disabled]='!formData.valid'>Log in</button>
+    </form>
+  </div>

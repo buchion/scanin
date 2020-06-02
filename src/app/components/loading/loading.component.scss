@@ -1,0 +1,98 @@
+$desktop: 631px;
+$mobile: 630px;
+
+
+@mixin mobile {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin for-tablet-portrait-up {
+    @media (max-width: 988px, ) { @content; }
+  }
+
+svg {
+
+    
+
+ @include mobile {
+    width: 17em;
+    height: 26em;
+}
+
+    @include desktop {
+        width: 30em;
+        height: 35em;
+    }
+
+    // @include for-tablet-portrait-up {
+    //     height: 26em;
+    // }
+}
+
+svg #scanray {
+    animation-name: animatescanray;
+    animation-duration: 6.3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    opacity: .3;
+}
+
+@keyframes animatescanray {
+    from {
+        transform: translateX(0) translateY(0) ;
+    }
+    to {
+        transform: translateX(-74px) translateY(45px) ;
+    }      
+}
+
+svg #thephone {
+    animation-name: animatephone;
+    animation-duration: 6.2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes animatephone {
+    from {
+        transform: translateX(0) translateY(0);
+    }
+    to {
+        transform: translateX(0px) translateY(20px);
+    }
+}
+
+// svg #scanresult {
+//     animation-name: animatescanresult;
+//     animation-duration: 6s;
+//     animation-iteration-count: infinite;
+//     animation-direction: alternate;
+// }
+
+// @keyframes animatescanresult {
+//     // from {
+//     //     opacity: 1;
+//     // }
+//     // to {
+//     //     opacity: 0;
+//     // }
+
+//     0%   {opacity: 0;}
+//     25%  {opacity: 0;}
+//   50%  {opacity: 0;}
+//   75%  {opacity: 0;}
+//   100% {opacity: 1;}
+// }
+
+// .modalSet {
+//  height: min-content;
+//  width: min-content;
+// }

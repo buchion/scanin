@@ -1,0 +1,237 @@
+$color : (
+primary: #005dff,
+primary-light: lighten(#005dff, 40%),
+primary-dark: darken(#005dff, 40%),
+accent: #fff,
+);
+
+$padding: 15px;
+$borders: 15px;
+
+@function color($color-name) {
+    @return map-get($color , $color-name)
+}
+
+$desktop: 800px;
+$mobile: 640px;
+
+
+@mixin mobile {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin for-tablet-portrait-up {
+    @media (max-width: 988px, ) { @content; }
+  }
+
+body, html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Montserrat';
+    margin: 0;
+
+    #bg {
+        clip-path: polygon(100% 0, 100% 82%, 45% 100%, 0 100%, 0 0);
+        background-image: url('../../../assets/exhibition1.jpg');
+        background-size: contain;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+
+        @include desktop {
+            clip-path: polygon(0 0, 75% 0, 55% 100%, 0% 100%);
+        }
+    }
+
+    header a {
+        color: #fff;
+        text-decoration: none;
+        padding: $padding;
+        display: block;
+        // text-transform: uppercase;
+    }
+}
+
+main {
+
+    @include desktop {
+        display: grid;
+        grid-template-columns: 50% auto;
+        grid-template-areas: "primary card";
+    }
+
+section#card {
+    background: #fff;
+    padding: 20px;
+    margin: 1em auto;
+    border-radius: $borders;
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+    width: 80%;
+
+    @include desktop {
+        grid-area: card;
+        height: fit-content;
+        align-self: center;
+        margin: 1em;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0; padding: 0;
+
+        li {
+            margin-bottom: 10px;
+
+            span {
+                position: absolute;
+                content: ' ';
+                width: 30px;
+                height: 30px;
+                background-color: color(primary-light);
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+            strong {
+                display: inline-block;
+                margin-left: max(40px);
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+section#primary {
+    padding: $padding;
+    text-align: center;
+    color: #fff;
+
+    @include desktop {
+        grid-area: primary;
+        text-align: left;
+        margin: 4em 0 0 4em;
+        color: #fff;
+    }
+
+
+    h1 {
+        font-size: 3em;
+        margin-top: 10px;
+        // text-transform: uppercase;
+
+        @include desktop {
+            width: 30%;
+            font-size: 4em;
+            line-height: .9em;
+        }
+
+        @include for-tablet-portrait-up {
+            font-size: 3em;
+        }
+
+    }
+
+    p {
+        font-size: 1.4em;
+    }
+    a {
+        color: color(primary-dark);
+        border-radius: $borders;
+        text-decoration: none;
+        // text-transform: none !important;
+        font-weight: bold;
+        background-color: color(accent);
+        display: block;
+        text-align: center;
+        margin: 50px auto 0 auto;
+        padding: $padding;
+
+        @include desktop {
+            display: inline-block;
+            padding: $padding $padding*4;
+        }
+    }
+}
+
+}
+
+svg {
+    @include mobile() {
+        display: none;
+    }
+
+    @include desktop {
+        width: 700px;
+        margin-top: 120px;
+    }
+
+    @include for-tablet-portrait-up {
+        width: 500px;
+        display: none;
+    }
+}
+
+svg #scanray {
+    animation-name: animatescanray;
+    animation-duration: 6.3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    opacity: .3;
+}
+
+@keyframes animatescanray {
+    from {
+        transform: translateX(0) translateY(0) ;
+    }
+    to {
+        transform: translateX(-74px) translateY(45px) ;
+    }      
+}
+
+svg #thephone {
+    animation-name: animatephone;
+    animation-duration: 6.2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes animatephone {
+    from {
+        transform: translateX(0) translateY(0);
+    }
+    to {
+        transform: translateX(0px) translateY(20px);
+    }
+}
+
+// svg #scanresult {
+//     animation-name: animatescanresult;
+//     animation-duration: 6s;
+//     animation-iteration-count: infinite;
+//     animation-direction: alternate;
+// }
+
+// @keyframes animatescanresult {
+//     // from {
+//     //     opacity: 1;
+//     // }
+//     // to {
+//     //     opacity: 0;
+//     // }
+
+//     0%   {opacity: 0;}
+//     25%  {opacity: 0;}
+//   50%  {opacity: 0;}
+//   75%  {opacity: 0;}
+//   100% {opacity: 1;}
+// }

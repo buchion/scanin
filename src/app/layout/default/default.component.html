@@ -1,0 +1,38 @@
+<div class="container" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-toolbar class="toolbar" (click)="snav.toggle()">
+        <button mat-icon-button class="toolbaricon">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <h2>Scan In</h2>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+        <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+            fixedTopGap="56">
+            <mat-nav-list>
+                <a mat-list-item routerLinkActive='list-item-active' routerLink='/dashboard'>
+                    <mat-icon>event_note</mat-icon>Create an Event
+                </a>
+                <a mat-list-item routerLinkActive='list-item-active' routerLink='/dashboard/monitor'>
+                    <mat-icon>date_range</mat-icon>My Events
+                </a>
+                <a mat-list-item routerLinkActive='list-item-active' routerLink='/dashboard/create'>
+                    <mat-icon>group</mat-icon>Create Attendance
+                </a>
+                <!-- <a mat-list-item routerLinkActive='list-item-active' routerLink='/dashboard/events'>
+                    <mat-icon>group</mat-icon>My Attendees
+                </a> -->
+                <a mat-list-item routerLinkActive='list-item-active' routerLink='/dashboard/monitor'>
+                    <mat-icon>important_devices</mat-icon>Monitor
+                </a>
+
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
+
+<!-- <div *ngIf="!shouldRun">Please open on Stackblitz to see result</div> -->
