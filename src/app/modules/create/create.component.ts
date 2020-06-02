@@ -3,8 +3,6 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { LoadingComponent } from 'src/app/components/loading/loading.component'
 import { createEventService } from 'src/providers/createEvent.service'
 
-
-
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
