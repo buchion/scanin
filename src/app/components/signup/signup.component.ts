@@ -26,6 +26,8 @@ export class SignupComponent implements OnInit {
 
   state: string = '';
   error: any;
+  email
+  password
 
   // emailFormControl = new FormControl('', [
   //   Validators.required,

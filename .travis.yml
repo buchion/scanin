@@ -11,8 +11,9 @@ before_script:
 script:
   # - ng lint
   # - npm run test-headless
-  # - ng build --prod --base-href https://buchion.github.io/scanin/
-  - ng build --base-href https://buchion.github.io/scanin/
+  # - ng build --base-href https://buchion.github.io/scanin/
+  - ng build --prod --base-href https://buchion.github.io/scanin/
+  
 deploy:
   provider: pages
   skip_cleanup: true

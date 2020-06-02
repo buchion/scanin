@@ -14,6 +14,8 @@ export class EmailComponent implements OnInit {
 
   state: string = '';
   error: any;
+  email
+  password
 
   constructor(
     public af: AngularFireAuth,
